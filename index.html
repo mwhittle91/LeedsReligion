@@ -1,0 +1,67 @@
+<!DOCTYPE>
+	<HTML>
+		<HEAD>
+
+			<TITLE>
+			Religion Map of Leeds
+			</TITLE>
+
+			<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+			<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+			<LINK REL="stylesheet" HREF="css/layout.css" />
+			<script type="text/javascript" src="js/mapSetup.js"></script>
+			<script type="text/javascript" src="js/wards.js"></script>
+			<script type="text/javascript" src="js/places.js"></script>
+			
+			<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+			<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+			<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+			
+			<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+		</HEAD>
+
+
+		<BODY onload = 'initmap()'>
+
+		<DIV id = 'header'> <h1>Religious places in Leeds</H1> </DIV>
+		
+		<DIV id = 'nav'> <h2>Functions</H2>
+		
+		<SELECT ID="religion-select">
+			<OPTION VALUE="">Select Religion </OPTION>
+		</SELECT>
+		<BR>
+		<BR>
+		<form action="">
+			<input type="radio" name="activities" value="Education/Languages"> Education/Languages <br>
+			<input type="radio" name="activities" value="Outreach/Counselling"> Outreach/Counselling <br>
+			<input type="radio" name="activities" value="Lunch Club"> Lunch Club <br>
+			<input type="radio" name="activities" value="Youth Club"> Youth Club <br>
+			<input type="radio" name="activities" value="Fitness"> Fitness <br>
+		</form>
+		<BR>
+		<BR>
+		<button type="button">Email a location</button>
+		
+		
+		<DIV id = 'email'>
+			<form action="mailto:admin@example.com" enctype="text/plain" method="post">
+				<p>Name: <input name="Name" type="text" id="Name" size="40"></p>
+				<p>E-mail address: <input name="E-mail" type="text" id="E-mail" size="40"></p>
+				<p>Comment:</p>
+				<p><textarea name="Comment" cols="55" rows="5"
+				id="Comment"></textarea></p>
+				<p><input type="submit" name="Submit" value="Submit"></p>
+			</form >
+		</DIV>
+
+		
+		</DIV>
+
+		<DIV id = 'map'></DIV>
+		
+		
+
+		</BODY>
+	</HTML>

@@ -1,0 +1,79 @@
+* {
+	padding: 0px;
+	margin:0px;
+	font-family: Arial;
+}
+
+#Header {
+	height: 50px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 1;
+	position: relative;
+	vertical-align: middle;
+	white-space: nowrap;
+    overflow: hidden;
+}
+
+#nav { 
+    color: black;
+	position: relative;
+	top: 0px;
+	height: 95%;
+	width: 450px;
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+	z-index: 1;
+	white-space: nowrap;
+    overflow: hidden;
+    padding-left: 20px;
+	line-height:20px
+}
+
+#email { 
+	height: 50px;
+	width: 100%;
+	
+	background-color: rgba(0,0,0,0.7);
+	z-index: 10;
+	position: relative;
+	white-space: nowrap;
+    overflow: hidden;
+
+}
+
+#religion-select {
+
+	width: 90%;
+	background-color: white;
+	color: black
+}
+
+h1 {
+	color: white;
+	font-size: xxlarge;
+	font-family: Arial;
+	opacity: 1;
+	padding: 10px;
+	white-space: nowrap;
+    overflow: hidden;
+}
+
+h2 {
+	color: white;
+	font-size: xlarge;
+	font-family: Arial;
+	opacity: 1;
+	padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+	position: absolute;
+	top: 0px;
+	left:0px
+}
