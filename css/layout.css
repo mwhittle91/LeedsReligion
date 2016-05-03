@@ -49,6 +49,13 @@
 	color: black
 }
 
+#activity-select {
+
+	width: 90%;
+	background-color: white;
+	color: black
+}
+
 h1 {
 	color: white;
 	font-size: xxlarge;
@@ -62,6 +69,16 @@ h1 {
 h2 {
 	color: white;
 	font-size: xlarge;
+	font-family: Arial;
+	opacity: 1;
+	padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+h3 {
+	color: black;
+	font-size: large;
 	font-family: Arial;
 	opacity: 1;
 	padding: 10px;

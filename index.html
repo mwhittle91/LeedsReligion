@@ -22,23 +22,25 @@
 		</HEAD>
 
 
-		<BODY onload = 'initmap()'>
+		<BODY onload = 'initmap(); select()'>
 
 		<DIV id = 'header'> <h1>Religious places in Leeds</H1> </DIV>
 
-		<DIV id = 'nav'> <h2>Functions</H2>
+		<DIV id = 'nav'> 
 
-		<SELECT ID="religion-select" onchange="religionDrop()">
-			<OPTION VALUE="">Select Religion</OPTION>
+		<h2>Select Religion</h2>
+		<SELECT ID="religion-select" onchange="select()">
+			<OPTION VALUE="">Select All</OPTION>
 		</SELECT>
 		<BR>
-		<BR>
-		<SELECT ID="activity-select" onchange="activityDrop()">
-			<OPTION VALUE="">Education/Languages</OPTION>
-			<OPTION VALUE="">Outreach/Counselling</OPTION>
-			<OPTION VALUE="">Lunch Club</OPTION>
-			<OPTION VALUE="">Youth Club</OPTION>
-			<OPTION VALUE="">Fitness</OPTION>
+		<h2>Select Activity</h2>
+		<SELECT ID="activity-select" onchange="select()">
+			<OPTION VALUE=""> </OPTION>
+			<OPTION VALUE="Education/Languages">Education/Languages</OPTION>
+			<OPTION VALUE="Outreach/Counselling">Outreach/Counselling</OPTION>
+			<OPTION VALUE="Lunch Club">Lunch Club</OPTION>
+			<OPTION VALUE="Youth Club">Youth Club</OPTION>
+			<OPTION VALUE="Fitness">Fitness</OPTION>
 		</SELECT>
 		</DIV>
 		<DIV id = 'map'></DIV>
