@@ -15,8 +15,10 @@ var hindu
 var geoplaces
 var placefeatures
 var selectedText
+var activityText
 
 
+var markersAll
 function initmap() {
 
 	// Provide your access token
@@ -65,6 +67,7 @@ function initmap() {
 	placefeatures = []
 	placefeatures = geoplaces.features
 	//Set up markerclusterer
+	markersAll = new L.MarkerClusterGroup()
 	markers = new L.MarkerClusterGroup()
 	// Set up arrays for religion dropdown
 	var religionArray = []
@@ -83,15 +86,13 @@ function initmap() {
 
 		popup = "<H3>" + placefeatures[ID].properties.Organisation + "</H3>"
 				+ "<BR>" + "<p>" + "<b>Religion: </b>" + placefeatures[ID].properties.Religion
-				+ "<BR>" + "<b>Denomination: </b>" + placefeatures[ID].properties.Denomination
 				+ "<BR>" + "<b>Address: </b>" + placefeatures[ID].properties.Address_Line_1
-					+ "<BR>" + placefeatures[ID].properties.Address_Line_2
 					+ "<BR>" + placefeatures[ID].properties.Area
 					+ "<BR>" + placefeatures[ID].properties.City
 					+ "<BR>" +  placefeatures[ID].properties.Postcode
 				+ "<BR>"+ "<b>Telephone: </b>" +  placefeatures[ID].properties.Telephone
 				+ "<BR>"+ "<b>Website: </b>" +  '<a href="http://"'+placefeatures[ID].properties.Website+ '">' +placefeatures[ID].properties.Website+ '</a>'
-				+ "<BR>"+ "<b>email: </b>" +  placefeatures[ID].properties.email
+				+ "<BR>"+ "<b>Activities: </b>" +  placefeatures[ID].properties.Activities
 
 
 
@@ -100,21 +101,21 @@ function initmap() {
 		// create markers and add them to the clusterer
 		if  (placefeatures[ID].properties.Religion === 'Christian') {
 			Cmarker  = new L.Marker(latlng, {icon: Christian}).bindPopup(popup);
-			markers.addLayer(Cmarker);
+			markersAll.addLayer(Cmarker);
 		} else if (placefeatures[ID].properties.Religion === 'Muslim')  {
 			Mmarker = new L.Marker(latlng, {icon: Muslim}).bindPopup(popup);
-			markers.addLayer(Mmarker);
+			markersAll.addLayer(Mmarker);
 		} else if (placefeatures[ID].properties.Religion === 'Sikh')  {
 			Smarker = new L.Marker(latlng, {icon: Sikh}).bindPopup(popup);
-			markers.addLayer(Smarker);
+			markersAll.addLayer(Smarker);
 		} else if (placefeatures[ID].properties.Religion === 'Hindu')  {
 			Hmarker = new L.Marker(latlng, {icon: Sikh}).bindPopup(popup);
-			markers.addLayer(Hmarker);
+			markersAll.addLayer(Hmarker);
 		}else if (placefeatures[ID].properties.Religion === 'Jewish')  {
 			Jmarker = new L.Marker(latlng, {icon: Jewish}).bindPopup(popup);
-			markers.addLayer(Jmarker);
+			markersAll.addLayer(Jmarker);
 		}
-		map.addLayer(markers);
+		map.addLayer(markersAll);
 	}
 
 	$.each(uniqueReligion, function(val, text) {
@@ -138,6 +139,7 @@ function religionDrop() {
 		geoplaces = places
 		placefeatures = []
 		placefeatures = geoplaces.features
+		map.removeLayer(markersAll);
 		map.removeLayer(markers);
 		markers = new L.MarkerClusterGroup()
 		// for loop to search through data
@@ -148,20 +150,13 @@ function religionDrop() {
 		latlng = [placefeatures[ID].geometry.coordinates[1],placefeatures[ID].geometry.coordinates[0]]
 
 
-		popup = "<H3>" + placefeatures[ID].properties.Organisation + "</H3>"
-				+ "<BR>" + "<p>" + "<b>Religion: </b>" + placefeatures[ID].properties.Religion
-				+ "<BR>" + "<b>Denomination: </b>" + placefeatures[ID].properties.Denomination
-				+ "<BR>" + "<b>Address: </b>" + placefeatures[ID].properties.Address_Line_1
-					+ "<BR>" + placefeatures[ID].properties.Address_Line_2
-					+ "<BR>" + placefeatures[ID].properties.Area
-					+ "<BR>" + placefeatures[ID].properties.City
-					+ "<BR>" +  placefeatures[ID].properties.Postcode
-				+ "<BR>"+ "<b>Telephone: </b>" +  placefeatures[ID].properties.Telephone
-				+ "<BR>"+ "<b>Website: </b>" +  '<a href="http://"'+placefeatures[ID].properties.Website+ '">' +placefeatures[ID].properties.Website+ '</a>'
-				+ "<BR>"+ "<b>email: </b>" +  placefeatures[ID].properties.email
 
+				if (selectedText === 'Select Religion' ) {
 
-			if (selectedText === 'Christian' && placefeatures[ID].properties.Religion === 'Christian') {
+					map.removeLayer(markers);
+					map.addLayer(markersAll);
+
+			}else if (selectedText === 'Christian' && placefeatures[ID].properties.Religion === 'Christian') {
 
 					Cmarker  = new L.Marker(latlng, {icon: Christian}).bindPopup(popup);
 					markers.addLayer(Cmarker);
@@ -184,21 +179,21 @@ function religionDrop() {
 		}
 	}
 
-function activitySelect() {
+function activityDrop() {
 
 	geoplaces = places
 	placefeatures = []
 	placefeatures = geoplaces.features
 
+	for (ID in placefeatures) {
 
+	activitySelect = document.getElementById("activity-select");
+	activityText = activitySelect.options[activitySelect.selectedIndex].text
+	skillsSelect = document.getElementById("religion-select");
+	selectedText = skillsSelect.options[skillsSelect.selectedIndex].text
+	latlng = [placefeatures[ID].geometry.coordinates[1],placefeatures[ID].geometry.coordinates[0]]
 
-			var activity = document.getElementById('activity-select').value;
-			var activity_value
-			if (document.getElementById('a1').checked) {
-  activity_value = document.getElementById('a1').value;
-}
-
-
-
+	}
+	console.log(activityText, selectedText)
 
 }
