@@ -59,14 +59,14 @@ function select() {
 	
 	for (ID in placefeatures) {
 		
-		popUp = "<H3>" + placefeatures[ID].properties.Organisation + "</H3>"
+		popUp = "<p><b>" + placefeatures[ID].properties.Organisation + "</b></p>"
 				+ "<BR>" + "<p>" + "<b>Religion: </b>" + placefeatures[ID].properties.Religion
 				+ "<BR>" + "<b>Address: </b>" + placefeatures[ID].properties.Address_Line_1
 				+ "<BR>" + placefeatures[ID].properties.Area
 				+ "<BR>" + placefeatures[ID].properties.City
 				+ "<BR>" +  placefeatures[ID].properties.Postcode
 				+ "<BR>"+ "<b>Telephone: </b>" +  placefeatures[ID].properties.Telephone
-				+ "<BR>"+ "<b>Website: </b>" +  '<a href="http://"'+placefeatures[ID].properties.Website+ '">' +placefeatures[ID].properties.Website+ '</a>'
+				+ "<BR>"+ "<b>Website: </b>" +  placefeatures[ID].properties.Website
 				+ "<BR>"+ "<b>Activities: </b>" +  placefeatures[ID].properties.Activities
 		
 		if (relValue === "" && actValue === ""){

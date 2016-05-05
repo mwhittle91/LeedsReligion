@@ -2,6 +2,7 @@
 	padding: 0px;
 	margin:0px;
 	font-family: Arial;
+	word-break:break-word;
 }
 
 #Header {
@@ -27,20 +28,32 @@
 	white-space: nowrap;
     overflow: hidden;
     padding-left: 20px;
-	line-height:20px
+	padding-right: 20px;
+	line-height:20px;
+	word-break:break-all;
 }
 
-#email { 
-	height: 50px;
-	width: 100%;
-	
-	background-color: rgba(0,0,0,0.7);
-	z-index: 10;
-	position: relative;
-	white-space: nowrap;
-    overflow: hidden;
-
+/* unvisited link */
+a:link {
+    color: white;
 }
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: grey;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+
 
 #religion-select {
 
@@ -84,6 +97,7 @@ h3 {
 	padding: 10px;
     white-space: nowrap;
     overflow: hidden;
+	word-break:break-all;
 }
 
 #map {

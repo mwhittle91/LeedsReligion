@@ -24,9 +24,15 @@
 
 		<BODY onload = 'initmap(); select()'>
 
-		<DIV id = 'header'> <h1>Religion in Leeds</H1> 
-		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.personal.leeds.ac.uk/~gy14mw/LeedsReligion/" data-text="Places of worship in Leeds" data-via="mwhittle91" data-hashtags="Leeds">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></DIV>
+		<DIV id = 'header'> <h1>Religion in Leeds</H1> </DIV>
+			<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
 		<DIV id = 'nav'> 
 					
@@ -44,6 +50,53 @@
 			<OPTION VALUE="Youth Club">Youth Club</OPTION>
 			<OPTION VALUE="Fitness">Fitness</OPTION>
 		</SELECT>
+		<BR>
+		<BR>
+		<P>
+		Leeds is home to a diverse range of religious groups <BR>
+		and traditions. According to the 2011 census, of the <BR>
+		751,485 people living in Leeds, 55.9% are Christian, <BR>
+		5.4% are Muslim, 1.2% are Sikh, 0.9% are Hindu, 0.9% <BR>
+		are Jewish and 0.4% are Buddhist (28.2% listed &#39no religion&#39, <BR>
+		6.7% did not state a religion, and 0.3% listed &#39other&#39)  <BR>
+		<a href="http://www.personal.leeds.ac.uk/~gy14mw/LeedsReligion//data/wardData.pdf" target="_blank">Link to the data available here</a> <BR>
+		These statistics mirror, broadly, those given nationally, <BR>
+		making Leeds a religious microcosm of the larger picture  <BR>
+		of religious affiliation for England and Wales. <BR>
+		</P>
+		<br>
+		<P>
+		Learning about the religions on our doorstep has long <BR>
+		been an interest of the Centre for Religion and Public <BR>
+		Life and the Community Religions Project at the University <BR>
+		of Leeds. In 2016, with funding from the Arts and Humanities  <BR>
+		Research Council Cultural Engagement Fellowship, we have <BR>
+		begun to &#39map&#39 places of worship and religious groups  <BR>
+		and communities, starting in Chapeltown and Harehills.  <BR>
+		On this map, you can search for groups by religious <BR>
+		denomination, as well as by some of the social activities that <BR>
+		they provide. It is our aim to eventually include all <BR>
+		Leeds areas on this map. <BR>
+		</P>
+		<br>
+		<P>
+		If you would notice any places of worship or groups missing, <BR>
+		or would like to make amendments to a listing, <BR>
+		please email <a href="mailto: c.starkey@leeds.ac.uk">c.starkey@leeds.ac.uk</a>  <BR>
+		</p>
+		<div class="fb-share-button" data-href="http://www.personal.leeds.ac.uk/~gy14mw/LeedsReligion/" data-layout="button_count" data-mobile-iframe="true"></div>
+		<BR>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.personal.leeds.ac.uk/~gy14mw/LeedsReligion/" data-text="Religion in Leeds" data-via="mwhittle91" data-hashtags="ReligionInLeeds">Tweet</a>
+		<BR>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		<BR>
+		<p>
+		Map produced by <a title="Road Safety Week" href="http://www.its.leeds.ac.uk/people/m.whittle">Matthew Whittle</a>.</BR>
+		<a href="https://twitter.com/mwhittle91" class="twitter-follow-button" data-show-count="false">Follow @mwhittle91</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</p>
+	
+
 		</DIV>
 		<DIV id = 'map'></DIV>
 		</BODY>
