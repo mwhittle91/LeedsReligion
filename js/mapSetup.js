@@ -113,6 +113,9 @@ function select() {
 			else if (placefeatures[ID].properties.Religion === 'Jewish' && placefeatures[ID].properties.Education=== "Yes") {
 			plotPlaces()
 			}
+			else if (placefeatures[ID].properties.Religion === 'All' && placefeatures[ID].properties.Education=== "Yes") {
+			plotPlaces()
+			}
 			
 		}
 	
@@ -131,6 +134,9 @@ function select() {
 			plotPlaces()
 			}
 			else if (placefeatures[ID].properties.Religion === 'Jewish' && placefeatures[ID].properties.Outreach=== "Yes") {
+			plotPlaces()
+			}
+			else if (placefeatures[ID].properties.Religion === 'All' && placefeatures[ID].properties.Outreach=== "Yes") {
 			plotPlaces()
 			}
 		}
@@ -152,6 +158,9 @@ function select() {
 			else if (placefeatures[ID].properties.Religion === 'Jewish' && placefeatures[ID].properties.LunchClub=== "Yes") {
 			plotPlaces()
 			}
+			else if (placefeatures[ID].properties.Religion === 'All' && placefeatures[ID].properties.LunchClub=== "Yes") {
+			plotPlaces()
+			}
 		}
 		
 		function plotYouthClub() { 
@@ -169,6 +178,9 @@ function select() {
 			plotPlaces()
 			}
 			else if (placefeatures[ID].properties.Religion === 'Jewish' && placefeatures[ID].properties.YouthClub=== "Yes") {
+			plotPlaces()
+			}
+			else if (placefeatures[ID].properties.Religion === 'All' && placefeatures[ID].properties.YouthClub=== "Yes") {
 			plotPlaces()
 			}
 		}
@@ -190,12 +202,14 @@ function select() {
 			else if (placefeatures[ID].properties.Religion === 'Jewish' && placefeatures[ID].properties.Fitness=== "Yes") {
 			plotPlaces()
 			}
+			else if (placefeatures[ID].properties.Religion === 'All' && placefeatures[ID].properties.Fitness=== "Yes") {
+			plotPlaces()
+			}
 		}
 	
 	}	
 		function plotPlaces() { 
 		
-		console.log("helloworld")
 
 			latlng = [placefeatures[ID].geometry.coordinates[1],placefeatures[ID].geometry.coordinates[0]]
 			
@@ -255,6 +269,18 @@ function select() {
 				})
 				marker = new L.Marker(latlng, { 
 					icon: jewishIcon
+				})
+				addMarker()
+			}
+			
+			else if (placefeatures[ID].properties.Religion === 'All') {
+			
+				var allIcon = L.icon({
+				iconUrl: 'icons/all.svg',
+				iconSize: [30, 30],
+				})
+				marker = new L.Marker(latlng, { 
+					icon: allIcon
 				})
 				addMarker()
 			}

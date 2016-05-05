@@ -3,7 +3,7 @@
 		<HEAD>
 
 			<TITLE>
-			Religion Map of Leeds
+			Religion in Leeds
 			</TITLE>
 
 			<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
@@ -24,10 +24,12 @@
 
 		<BODY onload = 'initmap(); select()'>
 
-		<DIV id = 'header'> <h1>Religious places in Leeds</H1> </DIV>
+		<DIV id = 'header'> <h1>Religion in Leeds</H1> 
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.personal.leeds.ac.uk/~gy14mw/LeedsReligion/" data-text="Places of worship in Leeds" data-via="mwhittle91" data-hashtags="Leeds">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></DIV>
 
 		<DIV id = 'nav'> 
-
+					
 		<h2>Select Religion</h2>
 		<SELECT ID="religion-select" onchange="select()">
 			<OPTION VALUE="">Select All</OPTION>
@@ -35,7 +37,7 @@
 		<BR>
 		<h2>Select Activity</h2>
 		<SELECT ID="activity-select" onchange="select()">
-			<OPTION VALUE=""> </OPTION>
+			<OPTION VALUE=""> Show All</OPTION>
 			<OPTION VALUE="Education/Languages">Education/Languages</OPTION>
 			<OPTION VALUE="Outreach/Counselling">Outreach/Counselling</OPTION>
 			<OPTION VALUE="Lunch Club">Lunch Club</OPTION>
@@ -45,4 +47,5 @@
 		</DIV>
 		<DIV id = 'map'></DIV>
 		</BODY>
+		
 	</HTML>
